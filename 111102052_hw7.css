@@ -1,0 +1,299 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Main container */
+.main-container {
+    display: flex;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.nccu-icon {
+    width: 200px !important; /* 強制寬度為 200px */
+    height: auto !important; /* 高度按比例調整 */
+
+}
+
+/* Left panel */
+.left-panel {
+    width: 300px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Photo Panel */
+
+.left-panel {
+    width: 300px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.photo-panel {
+    height: 50%;
+    background-image: url('myphoto.jpg'); /* 替換成你的圖片文件 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+.text-content {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.text-content h3 {
+    font-size: 1.2em;
+    margin: 15px 0 5px;
+}
+
+.text-content p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.nccu-icon {
+    width: 60px;
+    margin-top: 20px;
+}
+
+/* Right panel */
+.right-panel {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Section headers */
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Timeline */
+.timeline .entry {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.timeline .year {
+    font-weight: bold;
+    width: 30%;
+}
+
+.timeline .description {
+    width: 65%;
+    text-align: left;
+}
+
+/* Homework list */
+.homework-list ul {
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+}
+
+.homework-list ul li {
+    margin-bottom: 5px;
+}
+
+.homework-list a {
+    color: #0074d9;
+    text-decoration: none;
+}
+
+.homework-list a:hover {
+    text-decoration: underline;
+}
+
+/* 音樂容器 */
+.music-grid {
+    display: flex;
+    justify-content: space-around; /* 等距分佈 */
+    flex-wrap: wrap; /* 如果空間不足，自動換行 */
+    text-align: center; /* 讓內容居中對齊 */
+}
+
+/* 單個音樂項目 */
+.music-item {
+    margin: 5px; /* 音樂項目間的間距 */
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中 */
+}
+
+/* 圖標樣式 */
+.music-item img {
+    width: 50px; /* 設置圖片寬度 */
+    height: 50px; /* 設置圖片高度 */
+    border-radius: 10px; /* 如果需要，給圖片加點圓角 */
+    margin-bottom: 5px; /* 圖片和歌名之間的間距 */
+}
+
+/* 歌名樣式 */
+.song-name {
+    font-size: 10px; /* 縮小歌名字體 */
+    color: #333; /* 歌名顏色 */
+    text-align: center; /* 歌名居中對齊 */
+    margin: 0; /* 移除多餘的上下間距 */
+}
+
+
+.note {
+    font-size: 12px;
+    color: gray;
+    margin-top: 10px;
+    text-align: left;
+}
+
+
+.name-edit-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#name-display {
+    font-size: 1.8em;
+    color: white;
+    margin: 0;
+}
+
+#edit-name-btn, #add-music-btn {
+    padding: 5px 10px;
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#edit-name-btn:hover, #add-music-btn:hover {
+    background-color: #005bb5;
+}
+
+input#name-input {
+    font-size: 1.8em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.music-item {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120vh;
+}
+
+.name-edit-container {
+    background-color: #333; /* 深灰背景 */
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    width: 300px;
+}
+
+/* Name display */
+#name-display {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white; /* 白色文字 */
+    margin: 0;
+}
+
+/* Input field (for editing) */
+#name-input {
+    font-size: 1.5rem;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    outline: none;
+    width: 70%;
+    transition: border 0.3s ease;
+}
+
+#name-input:focus {
+    border-color: #0074d9;
+}
+
+/* Edit/Save button */
+#edit-name-btn {
+    background-color: #f3e8d8; /* 淡米色背景 */
+    color: #333; /* 深灰文字 */
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#edit-name-btn:hover {
+    background-color: #e0d6c5; /* 深米色懸停效果 */
+    border-color: #ccc;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="111102052_hw7.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <div class="photo-panel"></div>
+            <div class="text-content">
+               <div class="name-edit-container">
+                    <h1 id="name-display">王晟剛</h1>
+                    <button id="edit-name-btn">edit</button>
+                </div>
+                <h3>ABOUT ME</h3>
+                <p>我正就讀國立政治大學國貿系，我對於財務規劃、稅務會計、和程式設計深感興趣. 我曾修過財務管理、中級會計學，並且掌握 Python 和 C++，目前正修習計算機概論.</p>
+                <h3>CONTACT</h3>
+                <p>
+                    <a href="mailto:kennywang1120@gmail.com" style="color: white;">kennywang1120@gmail.com</a>
+                </p>
+                <img src="universitylogo.png" alt="NCCU Logo" class="nccu-icon">
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <section class="education">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <div class="entry">
+                        <span class="year">2022 - now</span>
+                        <span class="description">National Chengchi University, Department of International Business</span>
+                    </div>
+                    <div class="entry">
+                        <span class="year">2020 - 2022</span>
+                        <span class="description">Taipei Municipal Ming Lun High School<br>Participated in basketball team</span>
+                    </div>
+                    <div class="entry">
+                        <span class="year">2018 - 2020</span>
+                        <span class="description">Yuteh junior high school<br>Started my basketball career</span>
+                    </div>
+                </div>
+            </section>
+            <section class="homework-list">
+                <h2>Homework List</h2>
+                <ul>
+                    <li>HW1 - <a href="https://github.com/KennyWANG07/20241004hw1.git" target="_blank">https://github.com/KennyWANG07/20241004hw1.git</a></li>
+                    <li>HW2 - <a href="https://github.com/KennyWANG07/20241011-hw2.git" target="_blank">https://github.com/KennyWANG07/20241011-hw2.git</a></li>
+                    <li>HW3 - <a href="https://github.com/KennyWANG07/20241025-hw3.git" target="_blank">https://github.com/KennyWANG07/20241025-hw3.git</a></li>
+                </ul>
+            </section>
+            <section class="favorite-music">
+                <h2>Favorite Music</h2>
+                <button id="add-music-btn">Add Music</button>
+                <div class="music-grid" id="music-list">
+                    <div class="music-item">
+                        <a href="https://youtu.be/YJfHuATJYsQ?si=0PwoGSTdJtWDDUOL" target="_blank">
+                            <img src="yt.png" alt="擱淺">
+                        </a>
+                        <p class="擱淺">擱淺</p>
+                    </div>
+                      <div class="music-item">
+                        <a href="https://youtu.be/DYptgVvkVLQ?si=GAkIqyPZxfmMjYYW" target="_blank">
+                            <img src="yt.png" alt="晴天">
+                        </a>
+                        <p class="晴天">晴天</p>
+                    </div>
+                    <div class="music-item">
+                        <a href="https://youtu.be/duZDsG3tvoA?si=jXcUIeb6p47cd3PQ" target="_blank">
+                            <img src="yt.png" alt="半島鐵盒">
+                        </a>
+                        <p class="半島鐵盒">半島鐵盒</p>
+                    </div>
+                     <div class="music-item">
+                        <a href="https://youtu.be/MKNrnSsIwf8?si=CzUDq7jEPtrgbaSf2" target="_blank">
+                            <img src="yt.png" alt="回到過去">
+                        </a>
+                        <p class="回到過去">回到過去</p>
+                    </div>
+                </div>
+                <p class="note">Note: 周杰倫不僅僅是位歌手，他唱出了屬於我們的青春</p>
+            </section>
+        </div>
+    </div>
+
+    <script >
+document.addEventListener("DOMContentLoaded", () => {
+    const editButton = document.getElementById("edit-name-btn");
+    let nameDisplay = document.getElementById("name-display"); // 初始顯示的 h1 名稱
+
+    editButton.addEventListener("click", () => {
+        if (editButton.textContent.trim().toLowerCase() === "edit") {
+            // 進入編輯模式
+            const inputField = document.createElement("input");
+            inputField.type = "text";
+            inputField.id = "name-input";
+            inputField.value = nameDisplay.textContent; // 預設為當前名稱
+
+            nameDisplay.replaceWith(inputField); // 替換 h1 -> 輸入框
+            editButton.textContent = "save"; // 修改按鈕文字
+            nameDisplay = inputField; // 更新引用
+        } else {
+            // 儲存並回到顯示模式
+            const newName = nameDisplay.value.trim() || "預設名稱"; // 防止空值
+            const newNameDisplay = document.createElement("h1");
+            newNameDisplay.id = "name-display";
+            newNameDisplay.textContent = newName;
+
+            nameDisplay.replaceWith(newNameDisplay); // 替換輸入框 -> h1
+            editButton.textContent = "edit"; // 修改按鈕文字
+            nameDisplay = newNameDisplay; // 更新引用
+        }
+    });
+});
+
+
+    // 新增音樂功能
+    const addMusicButton = document.getElementById("add-music-btn");
+    const musicList = document.getElementById("music-list");
+
+    addMusicButton.addEventListener("click", () => {
+        const newMusicName = prompt("Enter the name of the song:");
+        const newMusicLink = prompt("Enter the YouTube link of the song:");
+
+        if (newMusicName && newMusicLink) {
+            const newMusicItem = document.createElement("div");
+            newMusicItem.classList.add("music-item");
+
+            newMusicItem.innerHTML = `
+                <a href="${newMusicLink}" target="_blank">
+                    <img src="yt.png" alt="${newMusicName}">
+                </a>
+                <p>${newMusicName}</p>
+            `;
+
+            musicList.appendChild(newMusicItem);
+        }
+    });
+
+    </script>
+</body>
+</html>
